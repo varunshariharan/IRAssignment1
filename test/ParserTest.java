@@ -42,7 +42,6 @@ public class ParserTest {
                 Parser parser = new Parser();
                 Map<String,Integer> tokenMap = parser.tokenize(fileString);
                 tokenMap.keySet().toString();
-                System.out.println();   //do nothing. used for debugging
             }
         }
     }
