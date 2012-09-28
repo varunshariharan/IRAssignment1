@@ -1,36 +1,36 @@
-Number of tokens:				239187
-Number of unique words:			16752
-Number of tokens that appear only once	10175
-Average number of words per document		170.84785714285715
+Number of tokens:				239384
+Number of unique words:			11511
+Number of tokens that appear only once	5692
+Average number of words per document		170.86652391149178
 
 Top 30 tokens in database
-1.	the	--->	19420
-2.	of	--->	12651
-3.	.	--->	9609
-4.	and	--->	6619
-5.	a	--->	5821
-6.	in	--->	4585
-7.	to	--->	4511
-8.	is	--->	4067
-9.	for	--->	3477
-10.	are	--->	2418
-11.	with	--->	2250
-12.	on	--->	1933
-13.	at	--->	1828
-14.	by	--->	1744
-15.	flow	--->	1619
-16.	that	--->	1506
-17.	an	--->	1384
-18.	be	--->	1267
-19.	from	--->	1112
-20.	as	--->	1102
-21.	pressure	--->	1072
-22.	this	--->	1067
-23.	which	--->	941
-24.	boundary	--->	886
-25.	number	--->	858
-26.	results	--->	856
-27.	it	--->	845
-28.	mach	--->	808
-29.	theory	--->	710
-30.	was	--->	695
+1.	the	--->	19427
+2.	of	--->	12703
+3.	and	--->	6671
+4.	a	--->	6203
+5.	in	--->	4625
+6.	to	--->	4551
+7.	is	--->	4108
+8.	for	--->	3481
+9.	are	--->	2428
+10.	with	--->	2257
+11.	on	--->	1939
+12.	flow	--->	1837
+13.	at	--->	1832
+14.	by	--->	1755
+15.	that	--->	1568
+16.	an	--->	1386
+17.	be	--->	1269
+18.	pressure	--->	1203
+19.	boundary	--->	1154
+20.	from	--->	1114
+21.	as	--->	1109
+22.	this	--->	1078
+23.	layer	--->	999
+24.	which	--->	967
+25.	number	--->	967
+26.	j	--->	888
+27.	results	--->	885
+28.	it	--->	854
+29.	mach	--->	818
+30.	theory	--->	785

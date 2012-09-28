@@ -10,7 +10,12 @@ import java.util.Map;
  */
 public class Parser {
     public String removeTags(String inputString){
-        String returnString = inputString.replaceAll("<.*>","").replaceAll("\n"," ").replaceAll("\t"," ");
+        String returnString = inputString.replaceAll("<.*>","").replaceAll("\n"," ").replaceAll("\t"," ")
+                .replaceAll("\'s","")
+                .replaceAll("\\."," ")
+                .replaceAll("-"," ")
+                .replaceAll(","," ")
+                  ;
         return returnString;
     }
 
@@ -26,7 +31,6 @@ public class Parser {
                 tokenMap.put(token,count);
             }
         }
-        System.out.println(tokenMap.toString());
         return tokenMap;
     }
 }

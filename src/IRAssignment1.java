@@ -16,13 +16,18 @@ import java.util.Map;
  */
 public class IRAssignment1 {
     static String path = "./data/";
-    private static String string = "Modified_WithoutLines/";
+    private static String string = "Modified/";
     private static String modifiedPath = path + string;
     private static final String resultFile = "./Results.txt";
     static int NUMBER_OF_ROUNDS;
 
     public static void main(String[] args) {
         NUMBER_OF_ROUNDS = Integer.parseInt(args[0]);
+        try {
+            removeTagsAndTokens();
+        } catch (Exception e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
         File directory = new File(modifiedPath);
         File[] files = directory.listFiles();
         List<Map<String, Integer>> tokenMapList = new ArrayList<Map<String, Integer>>();
@@ -31,6 +36,20 @@ public class IRAssignment1 {
             getStatistics(tokenMapList);
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+    }
+
+    public static void removeTagsAndTokens() throws Exception {
+        File directory = new File(path);
+        File[] files = directory.listFiles();
+        for (File file : files) {
+            if(!file.isDirectory()){
+                String fileString = FileUtils.readFileToString(file);
+                Parser parser = new Parser();
+                String newFileString = parser.removeTags(fileString);
+                File outputFile = new File(modifiedPath + file.getName());
+                FileUtils.writeStringToFile(outputFile,newFileString);
+            }
         }
     }
 
@@ -47,7 +66,6 @@ public class IRAssignment1 {
                 Map<String,Integer> tokenMap = parser.tokenize(fileString);
                 tokenMap.keySet().toString();
                 tokenMapList.add(tokenMap);
-                System.out.println();   //do nothing. used for debugging
             }
         }
     }
@@ -90,6 +108,7 @@ public class IRAssignment1 {
         String fileString = "Number of tokens:\t\t\t\t" + numberOfTokens+ "\nNumber of unique words:\t\t\t" + numberOfUniqueWords+ "\nNumber of tokens that appear only once\t" + numberOfTokensThatAppearOnlyOnce+ "\nAverage number of words per document\t\t" + averageNumberOfWordsPerDocument+ "\n" + "\nTop "+NUMBER_OF_ROUNDS+" tokens in database\n"+maxList;
         File statisticsFile = new File(resultFile);
         FileUtils.writeStringToFile(statisticsFile,fileString);
+        System.out.println("Complete!! View ./Results.txt for the results");
     }
 
     private static void mergeTokenMaps(Map<String, Integer> overallTokenMap, Map<String, Integer> tokenMap) {
